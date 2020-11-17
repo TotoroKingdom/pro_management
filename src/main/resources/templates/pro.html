@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>周报</h1>
+<h2>
+    <a th:href="@{/savePro}">添加</a>
+</h2>
+<table class="txtable" align="center">
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>项目编号</td>
+        <td>项目名称</td>
+        <td>项目内容</td>
+        <td>创建时间</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="pro: ${listPro}">
+        <td th:text="${pro.getId()}">id</td>
+        <td th:text="${pro.getProId()}"></td>
+        <td th:text="${pro.getProTitle()}"></td>
+        <td th:text="${pro.getProText()}"></td>
+        <td th:text="${pro.getCreateDate()}"></td>
+        <td>
+            <a th:href="@{/getByIdPro(proId=${pro.proId})}">修改</a>
+            <a th:href="@{/deletePro(proId=${pro.proId})}">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<style>
+    .txtable{
+        width: 1500px;
+        height: 500px;
+        border: 1px solid #1b93e1;
+        border-collapse: collapse;
+    }
+    td{
+        border: 1px solid #1b93e1;
+    }
+
+</style>
+</body>
+</html>

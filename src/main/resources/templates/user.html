@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<body>
+<h1>用户信息</h1>
+<h2>
+    <a th:href="@{/saveUser}">添加</a>
+</h2>
+
+<table class="txtable" align="center">
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="user: ${listUser}">
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getUsername()}"></td>
+            <td th:text="${user.getPassword()}"></td>
+            <td>
+                <a th:href="@{/getByIdUser(userId=${user.id})}">修改</a>
+                <a th:href="@{/deleteUser(userId=${user.id})}">删除</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+    .txtable{
+        width: 1500px;
+        border: 1px solid #d0e9c6;
+        border-collapse: collapse;
+    }
+    td{
+        border: 1px solid #d0e9c6;
+    }
+</style>
+</body>
+</html>

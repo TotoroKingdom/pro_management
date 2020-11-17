@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>saveUser</title>
+</head>
+<body>
+<h1 align="center">saveUser</h1>
+
+<form th:action="@{/insertUser}", method="post">
+
+    <table class="txtable" align="center">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td><input name="id"></td>
+        </tr>
+        <tr>
+            <td>用户名</td>
+            <td><input name="username"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input name="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+        </thead>
+
+
+    </table>
+</form>
+
+<style>
+    .txtable{
+        width: 1500px;
+        border: 1px solid #1b93e1;
+        border-collapse: collapse;
+    }
+    td{
+        border: 1px solid #1b93e1;
+    }
+
+</style>
+</body>
+</html>

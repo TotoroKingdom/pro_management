@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h1>index</h1>
+<ol th:border="1" th:size="5">
+    <li>
+        <a th:href="@{/user}">
+            用户管理QAQ
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/main}">
+            员工管理QAQ
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/pro}">
+            周报管理QAQ
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/toSave}">
+            个人信息修改
+        </a>
+    </li>
+</ol>
+</body>
+</html>

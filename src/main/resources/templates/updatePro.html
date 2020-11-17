@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>updatePro</title>
+</head>
+<body>
+<h1 align="center">updatePro</h1>
+
+<form th:action="@{/updatePro}", method="post">
+
+    <table class="txtable" align="center">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td><input name="id" th:value="${pro.getId}"></td>
+        </tr>
+        <tr>
+            <td>项目编号</td>
+            <td><input name="proId" th:value="${pro.getProId}"></td>
+        </tr>
+        <tr>
+            <td>项目名称</td>
+            <td><input name="proTitle" th:value="${pro.getProTitle}"></td>
+        </tr>
+        <tr>
+            <td>项目内容</td>
+            <td><input name="proText" th:value="${pro.getProText}"></td>
+        </tr>
+        <tr>
+            <td>项目时间</td>
+            <td><input name="createDate" th:value="${pro.getCreateDate}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="修改"></td>
+        </tr>
+        </thead>
+
+
+    </table>
+</form>
+
+<style>
+    .txtable{
+        width: 1500px;
+        border: 1px solid #1b93e1;
+        border-collapse: collapse;
+    }
+    td{
+        border: 1px solid #1b93e1;
+    }
+
+</style>
+</body>
+</html>
